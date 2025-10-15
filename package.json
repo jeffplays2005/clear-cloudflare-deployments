@@ -2,8 +2,7 @@
   "name": "clear-cloudflare-deployments",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
   },
