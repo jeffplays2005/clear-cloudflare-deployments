@@ -9,16 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@actions/core");
 const helpers_1 = require("./helpers");
-const accountId = process.env.CF_ACCOUNT_ID;
-const projectName = process.env.CF_PROJECT_NAME;
-const authToken = process.env.CF_AUTH_TOKEN;
-if (!accountId || !projectName || !authToken) {
-    console.error("Missing variables: CF_ACCOUNT_ID, CF_PROJECT_NAME, CF_AUTH_TOKEN");
-    process.exit(1);
-}
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
+        const accountId = (0, core_1.getInput)("CF_ACCOUNT_ID", { required: true });
+        const projectName = (0, core_1.getInput)("CF_PROJECT_NAME", { required: true });
+        const authToken = (0, core_1.getInput)("CF_AUTH_TOKEN", { required: true });
         try {
             console.log("Fetching all deployments...");
             const deployments = yield (0, helpers_1.getAllDeployments)(accountId, projectName, authToken);

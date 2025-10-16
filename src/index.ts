@@ -1,15 +1,11 @@
+import { getInput } from "@actions/core"
 import { deleteDeployment, getAllDeployments } from "./helpers"
 
-const accountId = process.env.CF_ACCOUNT_ID as string
-const projectName = process.env.CF_PROJECT_NAME as string
-const authToken = process.env.CF_AUTH_TOKEN as string
-
-if (!accountId || !projectName || !authToken) {
-  console.error("Missing variables: CF_ACCOUNT_ID, CF_PROJECT_NAME, CF_AUTH_TOKEN")
-  process.exit(1)
-}
-
 async function main() {
+  const accountId = getInput("CF_ACCOUNT_ID", { required: true })
+  const projectName = getInput("CF_PROJECT_NAME", { required: true })
+  const authToken = getInput("CF_AUTH_TOKEN", { required: true })
+
   try {
     console.log("Fetching all deployments...")
     const deployments = await getAllDeployments(accountId, projectName, authToken)

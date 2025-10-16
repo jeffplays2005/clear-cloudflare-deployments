@@ -11,6 +11,9 @@
     "build": "tsc",
     "lint": "biome check ."
   },
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  },
   "devDependencies": {
     "@biomejs/biome": "2.2.6",
     "@types/node": "24.7.0",
