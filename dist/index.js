@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-require("dotenv/config");
 const helpers_1 = require("./helpers");
 const accountId = process.env.CF_ACCOUNT_ID;
 const projectName = process.env.CF_PROJECT_NAME;

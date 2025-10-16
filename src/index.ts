@@ -1,4 +1,3 @@
-import "dotenv/config"
 import { deleteDeployment, getAllDeployments } from "./helpers"
 
 const accountId = process.env.CF_ACCOUNT_ID as string
