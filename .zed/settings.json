@@ -1,10 +1,20 @@
 {
   "languages": {
     "TypeScript": {
-      "format_on_save": "on"
+      "format_on_save": "on",
+      "formatter": [
+        { "language_server": { "name": "biome" } },
+        { "code_action": "source.organizeImports.biome" },
+        { "code_action": "source.fixAll.biome" }
+      ]
     },
     "Markdown": {
-      "format_on_save": "on"
+      "format_on_save": "on",
+      "formatter": [
+        { "language_server": { "name": "biome" } },
+        { "code_action": "source.organizeImports.biome" },
+        { "code_action": "source.fixAll.biome" }
+      ]
     }
   },
   // cspell:disable-next-line
@@ -25,9 +35,5 @@
         "require_config_file": true
       }
     }
-  },
-  "code_actions_on_format": {
-    "source.fixAll.biome": true,
-    "source.organizeImports.biome": true
   }
 }
