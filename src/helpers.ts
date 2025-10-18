@@ -83,7 +83,7 @@ export async function deleteDeployment(
   deploymentId: string,
 ): Promise<void> {
   const response = await fetch(
-    `https://api.cloudflare.com/client/v4/accounts/${accountId}/pages/projects/${projectName}/deployments/${deploymentId}?force=true`,
+    `https://api.cloudflare.com/client/v4/accounts/${accountId}/pages/projects/${projectName}/deployments/${deploymentId}`,
     {
       method: "DELETE",
       headers: {

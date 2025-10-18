@@ -77,7 +77,7 @@ function fetchPage(accountId_1, projectName_1, authToken_1, page_1) {
  */
 function deleteDeployment(accountId, projectName, authToken, deploymentId) {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch(`https://api.cloudflare.com/client/v4/accounts/${accountId}/pages/projects/${projectName}/deployments/${deploymentId}?force=true`, {
+        const response = yield fetch(`https://api.cloudflare.com/client/v4/accounts/${accountId}/pages/projects/${projectName}/deployments/${deploymentId}`, {
             method: "DELETE",
             headers: {
                 Authorization: `Bearer ${authToken}`,
